@@ -1,0 +1,28 @@
+{
+  "name": "debug-pest",
+  "version": "1.0.0",
+  "description": "logging utilities over visionmedia's debug for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DhavalW/debug-pest.git"
+  },
+  "keywords": [
+    "Javascript",
+    "debug",
+    "logging"
+  ],
+  "author": "DhavalW",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DhavalW/debug-pest/issues"
+  },
+  "homepage": "https://github.com/DhavalW/debug-pest#readme",
+  "dependencies": {
+    "debug": "^3.1.0"
+  },
+  "devDependencies": {}
+}
