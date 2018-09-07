@@ -5,10 +5,16 @@ module.exports = function(debug){
 		this.prefix = suffix || '';
 
 		if(typeof debug == 'function'){
-			this.log = debug(`logs:` + this.prefix + ':root');
-			this.warn = debug(`warnings:` + this.prefix + ':root');
-			this.error = debug(`errors:` + this.prefix + ':root');
+			this.log = debug(`logs:` + this.prefix);
+			this.warn = debug(`warnings:` + this.prefix);
+			this.error = debug(`errors:` + this.prefix);
 			this.enabled = true;
+		}
+		else{
+			this.log = ()=>{};
+			this.warn = ()=>{};
+			this.error = ()=>{};
+			this.enabled = false;
 		}
 	};
 
