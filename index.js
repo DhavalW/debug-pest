@@ -1,13 +1,13 @@
 module.exports = function(debug){
 
-	var logger = function (suffix) {
+	var logger = function (name) {
 		this.enabled = false;
-		this.prefix = suffix || '';
+		this.name = name || '';
 
 		if(typeof debug == 'function'){
-			this.log = debug(`logs:` + this.prefix);
-			this.warn = debug(`warnings:` + this.prefix);
-			this.error = debug(`errors:` + this.prefix);
+			this.log = debug(`logs:` + this.name);
+			this.warn = debug(`warnings:` + this.name);
+			this.error = debug(`errors:` + this.name);
 			this.enabled = true;
 		}
 		else{
@@ -18,8 +18,8 @@ module.exports = function(debug){
 		}
 	};
 
-	logger.prototype.child = function (suffix) {
-		return new logger(this.prefix + ':' + suffix);
+	logger.prototype.child = function (name) {
+		return new logger(this.name + ':' + name);
 	};
 
 	return logger;
