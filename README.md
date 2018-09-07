@@ -24,9 +24,8 @@ child.log('Hello. This is a log from child1');
 ```
 
 ### Note
-this deviates slightly from the norm set by debug. The topmost namespace is not your app's name, but the log level.
-This is to allow configs like : <br> 
-- ('errors:*, -logs:*, -warnings:*') : Show all errors, but suppress logs & warnings, irrespective of module 
+This implementation deviates slightly from the norm set by debug. The topmost namespace is not your app's name, but the log level. This is to allow configs like : <br> 
+- ('errors:* , -logs:* , -warnings:* ') : Show all errors, but suppress logs & warnings, irrespective of module 
 
 ### Roadmap
-- Output to file(s) - with web based filtered log viewer.
+- Output to file(s), paired with a web based filtered log viewer.
