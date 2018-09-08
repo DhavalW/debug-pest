@@ -1,12 +1,13 @@
 # debug-pest
 
 Commonly useful logging extensions over visionmedia's debug
-<br>Wraps over debug, instead of modifying anything.
+<br>Extremely lightweight and wraps over debug.
 
 ### Features
 1. Log levels - Drop in replacement for console, mostly (ie implements log, warn & error)
 2. Easy child instances
 3. Each log-level of a logger (parent or child), is its own debug instance.
+4. Debug is unpluggable - Simply don't pass debug to this, to unplug debug completely. 
 
 ### Note
 1. debug-pest is a extremely light wrapper over 'debug', and is purposely setup to use 'debug' as an optional dependency - to reduce weight where debug might only be needed for testing (for eg). If 'debug' is not provided, it will disable (.enable = false) the loggers silently, without affecting your code.
@@ -21,7 +22,7 @@ The topmost namespace is not your app's name, but the log level. This is to allo
 ```javascript
 const debug = require('debug');
 debug.enable('*');
-const debug-pest = require('debug-pest')(debug);
+const debug-pest = require('debug-pest')(debug);  // Don't pass debug, to unplug it.
 
 const parent = new debug-pest('Parent');
 
